@@ -1,0 +1,21 @@
+//SUPPRESSIONPROJ:ZetaMED
+//VERSION:5.00
+//ENABLE:Yes
+!include cbuilder.sup
+ignore failure KERNEL32.DLL:LoadLibraryExA in everywhere 
+ignore failure KERNEL32.DLL:GetModuleHandleA in everywhere 
+ignore failure USER32.DLL:LoadIconA in everywhere 
+ignore overrun(11,2) in file EXE:"Forms.pas"
+ignore failure KERNEL32.DLL:VirtualAlloc in file EXE:"GETMEM.INC"
+ignore failure KERNEL32.DLL:CreateEventA in module CRYPT32.dll
+ignore param 2 KERNEL32.DLL:CreateFileA in module iphlpapi.dll
+ignore failure KERNEL32.DLL:FormatMessageA in module iphlpapi.dll
+ignore failure ADVAPI32.DLL:OpenServiceW in module MPRAPI.dll
+ignore failure USER32.DLL:UnregisterClassW in everywhere 
+ignore param 1 KERNEL32.DLL:TerminateThread in everywhere 
+ignore failure KERNEL32.DLL:TerminateThread in everywhere 
+ignore param 1 KERNEL32.DLL:GetExitCodeThread in everywhere 
+ignore failure KERNEL32.DLL:GetExitCodeThread in everywhere 
+ignore failure WS2_32.DLL:WSACancelBlockingCall in everywhere 
+ignore param 1 KERNEL32.DLL:LocalFree in module NTMARTA.DLL
+

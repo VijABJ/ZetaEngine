@@ -1,0 +1,20 @@
+ZEDX.Initialize() - ENTER
+--- Calling PreInit()
+--- Initializing DirectMusic/DirectSound
+--- Initializing DirectShow
+--- Initializing EventManager
+... validating ...
+... opening event devices ...
+... hooking keyboard ...
+... setting up mouse ...
+... creating mouse cursor ...
+--- Initializing DirectX
+--- Loading Splash Screen
+--- Loading Data
+Loading: Data\DefData.zvf
+LoadImageVolume (Data\DefData.zvf)
+Loading: Data\DefObjects.zvf
+LoadImageVolume (Data\DefObjects.zvf)
+--- Calling PostInit()
+OK
+ZEDX.Initialize() - INIT OK
