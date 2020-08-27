@@ -1,0 +1,36 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = DirectXSubSystem.exe WindowingSystem.exe CoreSystem.exe ZetaMED.exe \
+  ZetaLib.dll SimpleD6.exe
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+DirectXSubSystem.exe: DirectXSubSystem.dpr
+  $(DCC)
+
+WindowingSystem.exe: WindowingSystem.dpr
+  $(DCC)
+
+CoreSystem.exe: CoreSystem.dpr
+  $(DCC)
+
+ZetaLib.dll: ..\DLL\ZetaLib.dpr
+  $(DCC)
+
+ZetaMED.exe: ..\Apps\MapEditor\ZetaMED.dpr
+  $(DCC)
+
+SimpleD6.exe: ..\Apps\Simple.D6\SimpleD6.dpr
+  $(DCC)
+
+

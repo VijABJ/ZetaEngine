@@ -1,0 +1,36 @@
+
+<Isometric Drawing of MultiTile Objects>
+
+*** Assumptions ***
+The map is a 2d grid with upper left corner drawn at the very top
+of the screen, and this is location (0, 0).  The bottom right of
+the 2d grid is drawn last, and this is location (SIZEX-1, SIZEY-1)
+
+*** Solution ***
+
+Assign two rectangles for every object in the map.  These rectangles
+are the following:
+
+1. Bounds rectangle comprising the upperleft-most part of the object
+and the lowerright-most.
+>> Examples:
+   * a 1X1 object anchored at location( 0, 0) has the bounds ((0, 0), (0, 0))
+   * a 2x2 object anchored at (2, 2) has the bounds ((2, 2), (3, 3))
+   * a 3x1 object anchored at (1, 2) has the bounds ((1, 2), (3, 2))
+
+2. Intersection rectangle comprising the upperleft-most part of the
+object and the lowerright-most part OF THE WHOLE MAP!
+>> Examples:
+   * a 1X1 object anchored at location( 0, 0) has the bounds ((0, 0), (SIZEX-1,SIZEY-1))
+   * a 2x2 object anchored at (2, 2) has the bounds ((2, 2), (SIZEX-1,SIZEY-1))
+   * a 3x1 object anchored at (1, 2) has the bounds ((1, 2), (SIZEX-1,SIZEY-1))
+
+So how do you determine if object A is in front of object B, and thus should
+be drawn last?  With the above rectangles for all the objects, you simply
+check if object A's IntersectionRect INTERSECTS object B's BoundsRect.
+This is normally quite an expensive operation, but compared to multiple
+compares of every kind (which I've tried, and lots of variations of that too!),
+this is very acceptable.  Moreoever, you don't have to do this everytime
+-- only during those times when you REALLY need to rebuild the list of
+visible objects.
+

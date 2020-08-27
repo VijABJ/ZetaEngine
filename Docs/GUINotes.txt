@@ -1,0 +1,134 @@
+
+Sample Script for GUI
+
+Section CutSceneDesktop : Desktop
+	Bounds = ScreenBounds
+	BackColor =
+	Font =
+	
+End Section
+
+/////
+
+available GUI classes
+
+TZE+name:
+* Control -- generic, cannot be instantiated
+* GroupControl -- ditto
+* StandardButton
+* IconButton
+* PictureButton
+* PushPanel -- same as CustomPushPanel except that caption is enabled
+* PicturePanel
+* Checkbox
+* CustomEditControl -- do not create!
+* EditControl
+* NumericEditControl
+* CustomGauge -- do not create!
+* ProgressGauge
+* ScrollGauge
+
+* CustomScrollbox -- no provision for event handling, do not create
+* PanelGroup
+* Wallpaper
+* WinBorders
+* Text
+* Label
+
+* CustomPushButton -- do not create, no draw for this one
+* CustomToggleButton -- ditto
+* CustomPushPanel -- has default draws, but use PushPanel instead
+
+* StandardWindow
+* Desktop
+* CustomDialog -- has no meaningful handles, do not create
+* OKCancelDialog
+
+
+
+{ all parameters are string } 
+
+
+
+++ Read/Write Properties of TZEControl
+SpriteName : string
+Bounds : TRect
+Name : string
+Caption : string
+BackColor : Color
+Font : string (TFont internally)
+
+++ R/W Props of PicturePanel
+GroupId
+Picture
+
+++ R/W Props of CustomPushButton
+Pressed
+Command
+AutoPopup
+ThreeState
+
+++ R/W Props of CustomToggleButton
+Checked
+
+++ R/W Props of CustomPushPanel
+ShowCaption
+
+--------------------------------------------------------------------
+sample GUI script
+
+#include anotherfile
+#define SYMBOL value
+
+// this is a comment
+/* so is this */
+/* might be a LOT easier to create the interpreter if
+	all lines start with a keyword? */
+	
+// some predefined symbols are
+ROOTWINDOW - the root of all window controls
+SCREENBOUNDS - rect of whole screen
+
+types supported: 
+	NUMERIC, ALPHA, ALPHANUMERIC, BOOL, NULL, CONTROL
+
+module modulename; // MUST BE THE FIRST LINE!!!
+
+const symbol [type] value;
+var symbol type;
+func funcname ([param1, param2, param3]) as resulttype;
+begin
+end;
+
+func main ()
+
+%
+	#MainDesktop#
+	
+	declare
+	declare r as prop;
+	declare desktop as control;
+	declare gamewindow as control;
+	declare button as control;
+	
+	begin
+		desktop = ctl_create ('Desktop', ^SCREENBOUNDS^);
+		ctl_setprop (desktop, 'BackColor', '$FF0000');
+		ctl_setprop (desktop, 'Font', 'Caption');
+		ctl_attach (desktop, ^ROOT^);
+	
+		r = ctl_getprop (Desktop, 'Bounds');
+		rect_expand (r, '-16,-16');
+		ctl_create (GameWindow, r);
+		ctl_attach (GameWindow, Desktop);
+	
+		r = '0, 0, 100, 40';
+		ctl_create
+	end;
+	
+%
+
+
+
+
+

@@ -1,0 +1,13 @@
+[MAIN]
+Name=Barrel_05
+Orientations=X(3:3)
+
+[#DEFAULT]
+BaseSprite=Barrel_05
+Images=1
+Frames=1
+Repeating=1
+NextAction=
+
+[$DEFAULT]
+0=0,0,,

@@ -1,0 +1,13 @@
+[MAIN]
+Name=Lumber_01
+Orientations=X(3:5)
+
+[#DEFAULT]
+BaseSprite=Lumber_01
+Images=1
+Frames=1
+Repeating=1
+NextAction=
+
+[$DEFAULT]
+0=0,0,,

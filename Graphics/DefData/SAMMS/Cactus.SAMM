@@ -1,0 +1,17 @@
+[MAIN]
+Name=Cactus
+Orientations=X
+
+
+[#DEFAULT]
+BaseSprite=Cactus
+Images=1
+Frames=1
+Repeating=1
+NextAction=
+
+[$DEFAULT]
+0=0,0,,
+
+
+

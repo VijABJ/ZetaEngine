@@ -1,0 +1,23 @@
+
+Organization of a useable Map:
+
+AREAS
++-+ Map1
+	+- Creatures
+	+- Doors (?)
+	+- Encounters
+	+- Items
+	+- Merchants (?)
+	+- Placeables
+	+- Sounds
+	+- Triggers
+	+- Waypoints
+CONVERSATIONS
++---
+SCRIPTS
++---
+
+
+
+notes:
+3dmax camera for isometric: 45 around x & z

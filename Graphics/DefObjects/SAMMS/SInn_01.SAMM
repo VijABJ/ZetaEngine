@@ -1,0 +1,13 @@
+[MAIN]
+Name=SInn_01
+Orientations=X(1:3)
+
+[#DEFAULT]
+BaseSprite=SInn_01
+Images=1
+Frames=1
+Repeating=1
+NextAction=
+
+[$DEFAULT]
+0=0,0,,

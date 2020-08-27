@@ -1,0 +1,13 @@
+[MAIN]
+Name=FirePit_01
+Orientations=X(2:2)
+
+[#DEFAULT]
+BaseSprite=FirePit_01
+Images=1
+Frames=1
+Repeating=1
+NextAction=
+
+[$DEFAULT]
+0=0,0,,

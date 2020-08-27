@@ -1,0 +1,16 @@
+[Cow]
+Updateable=1
+Orientable=1
+MoveRate=100
+
+[Deer]
+Updateable=1
+Orientable=1
+MoveRate=100
+
+[Horse]
+Updateable=1
+Orientable=1
+MoveRate=100
+
+

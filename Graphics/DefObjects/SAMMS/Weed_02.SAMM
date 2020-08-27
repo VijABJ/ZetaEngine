@@ -1,0 +1,13 @@
+[MAIN]
+Name=Weed_02
+Orientations=X
+
+[#DEFAULT]
+BaseSprite=Weed_02
+Images=1
+Frames=1
+Repeating=1
+NextAction=
+
+[$DEFAULT]
+0=0,0,,

@@ -1,0 +1,13 @@
+[MAIN]
+Name=TrElven_04
+Orientations=X(2:2)
+
+[#DEFAULT]
+BaseSprite=TrElven_04
+Images=1
+Frames=1
+Repeating=1
+NextAction=
+
+[$DEFAULT]
+0=0,0,,

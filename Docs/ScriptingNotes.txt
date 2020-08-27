@@ -1,0 +1,91 @@
+
+SCRIPT    			-> HEADER [DECLARATIONS] BODY
+HEADER    			-> module IDENTIFIER TERMINATOR
+DECLARATIONS		-> declaration [more_decl]
+BODY						-> 
+
+
+notes: what if there is no main(), or begin/end proper?  
+the script could just contain anything and everything 
+that can be called for later execution.  all the module 
+file does is encircle everything inside it with the 
+proper context.
+
+------
+
+
+
+grammar derived from RMSPL Pascal Compiler for PICK/OS
+---
+EXPRESSION													=> CONSTANT-EXPRESSION
+CONSTANT-EXPRESSION								=> SIMPLE-EXPRESSION RELATIONAL-RIGHT
+RELATIONAL-RIGHT										=> RELATIONAL-OPERATOR SIMPLE-EXPRESSION
+																	=> NULL
+RELATIONAL-OPERATOR								=> `==` | `!=` | `<` | `<=` | `>` | `>=`
+SIMPLE-EXPRESSION									=> TERM MORE-TERMS
+TERM																=> COMPLEMENTED-FACTOR MORE-FACTORS
+MORE-TERMS													=> ARITHMETIC-OP-LEVEL1 TERM MORE-TERMS
+																	=> BOOLEAN-OP-LEVEL1 {assert: prev term must be boolean} TERM {assert: must be boolean} MORE-TERMS
+																	=> NULL			
+COMPLEMENTED-FACTOR								=> ARITHMETIC-SIGN COMPLEMENTED-FACTOR
+																	=> BOOLEAN-SIGN COMPLEMENTED-FACTOR
+																	=> FACTOR
+FACTOR															=> `(` CONSTANT-EXPRESSION `)`
+																	=> `nil`
+																	=> IDENTIFIER | FUNCTION-CALL
+MORE-FACTORS												=> ARITHMETIC-OP-LEVEL2 COMPLEMENTED-FACTOR MORE-FACTORS
+																	=> BOOLEAN-OP-LEVEL2 {assert: prev factor must be boolean} 
+																			COMPLEMENTED-FACTOR {assert: must be boolean} MORE-FACTORS																
+																	=> NULL
+BOOLEAN-SIGN												=> `!`
+ARITHMETIC-SIGN										=> `-` | `+`
+ARITHMETIC-OP-LEVEL1								=> `+` | `-`
+ARITHMETIC-OP-LEVEL2								=> `*` | `/` | `div` | `mod` | `shl` | `shr`
+BOOLEAN-OP-LEVEL1									=> `or` | `xor`
+BOOLEAN-OP-LEVEL2									=> `and`
+---
+
+VAR-DECL														=> DATA-TYPE ID-DECL-LIST
+CONST-DECL													=> `const` DATA-TYPE ID VAR-INIT
+ID-INIT														=> `=` EXPR | NULL
+DATA-TYPE													=> int | string | entity | control
+ID-DECL-LIST												=> ID-SPEC MORE-ID
+ID-SPEC														=> ID ARRAY-SPEC
+ARRAY-SPEC													=> `[` EXPR..EXPR `]`
+MORE-ID														=> ID MORE-ID | NULL
+ASSIGNMENT													=> ID `=` EXPR;
+IFTHEN															=> `if` `(` EXPR `)` [`then`] STMT-BLOCK OPT-ELSE;
+OPT-ELSE														=> `else` STMT-BLOCK | NULL
+
+STMT-BLOCK													=> `{` STMT-LIST `}` | STMT
+TERMINATED-STMT										=> STMT `;`
+STMT-LIST													=> STMT MORE-STMT 
+MORE-STMT													=> `;` STMT MORE-STMT | NULL
+
+STMT																=> NULL
+																	=> FUNCTION - `function`
+																	=> IFTHEN - `if`
+																	=> WHILEDO - `while`
+																	=> DOWHILE - `do`
+																	=> FORNEXT - `for`
+																	=> CONST-DECL - `const` - OK
+																	=> VAR-DECL - `int`|`char`|`object`|`float`|`bool` - OK
+																	=> RETURN - `return` - OK
+
+START 															=> STMT-LISTS
+STMT-LISTS													=> DECL-STMT MORE-STMTS
+DECL-STMT													=> VAR-DECL `;` | CONST-DECL `;` | FUNCTION `;` | NULL
+FUNCTION														=> `function` DATA-TYPE ID `(` VAR-DECL {no initializer allowed} `)` FUNCTION-BODY
+FUNCTION-BODY											=> `{` STMT-BLOCK `}`
+
+
+Type Promotions:
+----------------
+integer -> float
+numeric -> boolean
+
+
+so what does a module contain?
+. module scope identifiers, constants, links to other modules
+. symbol table.  if symbol is a function then it should contain
+	a link to the generated code for it.

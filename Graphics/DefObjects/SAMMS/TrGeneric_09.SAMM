@@ -1,0 +1,13 @@
+[MAIN]
+Name=TrGeneric_09
+Orientations=X
+
+[#DEFAULT]
+BaseSprite=TrGeneric_09
+Images=1
+Frames=1
+Repeating=1
+NextAction=
+
+[$DEFAULT]
+0=0,0,,

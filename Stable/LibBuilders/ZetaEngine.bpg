@@ -1,0 +1,45 @@
+#------------------------------------------------------------------------------
+VERSION = BWS.01
+#------------------------------------------------------------------------------
+!ifndef ROOT
+ROOT = $(MAKEDIR)\..
+!endif
+#------------------------------------------------------------------------------
+MAKE = $(ROOT)\bin\make.exe -$(MAKEFLAGS) -f$**
+DCC = $(ROOT)\bin\dcc32.exe $**
+BRCC = $(ROOT)\bin\brcc32.exe $**
+#------------------------------------------------------------------------------
+PROJECTS = ZbLibBase.exe ZbLibTools.exe ZbLibScripting.exe DirectXSubSystem.exe \
+  WindowingSystem.exe CoreSystem.exe ZetaLib.dll ZetaMED.exe Orders.exe
+#------------------------------------------------------------------------------
+default: $(PROJECTS)
+#------------------------------------------------------------------------------
+
+DirectXSubSystem.exe: DirectXSubSystem.dpr
+  $(DCC)
+
+WindowingSystem.exe: WindowingSystem.dpr
+  $(DCC)
+
+CoreSystem.exe: CoreSystem.dpr
+  $(DCC)
+
+ZbLibBase.exe: ..\..\ZbLibrary\LibBuilders\ZbLibBase.dpr
+  $(DCC)
+
+ZbLibTools.exe: ..\..\ZbLibrary\LibBuilders\ZbLibTools.dpr
+  $(DCC)
+
+ZbLibScripting.exe: ..\..\ZbLibrary\LibBuilders\ZbLibScripting.dpr
+  $(DCC)
+
+ZetaLib.dll: ..\DLL\ZetaLib.dpr
+  $(DCC)
+
+ZetaMED.exe: ..\Apps\MapEditor\ZetaMED.dpr
+  $(DCC)
+
+Orders.exe: ..\..\..\Thesis\2002-2003-3rdTri\Orders.delphi\SrcCode\Orders.dpr
+  $(DCC)
+
+

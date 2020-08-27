@@ -1,0 +1,13 @@
+[MAIN]
+Name=TrFig_02
+Orientations=X(4:4)
+
+[#DEFAULT]
+BaseSprite=TrFig_02
+Images=1
+Frames=1
+Repeating=1
+NextAction=
+
+[$DEFAULT]
+0=0,0,,

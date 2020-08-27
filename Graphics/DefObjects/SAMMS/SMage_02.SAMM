@@ -1,0 +1,13 @@
+[MAIN]
+Name=SMage_02
+Orientations=X(2:1)
+
+[#DEFAULT]
+BaseSprite=SMage_02
+Images=1
+Frames=1
+Repeating=1
+NextAction=
+
+[$DEFAULT]
+0=0,0,,

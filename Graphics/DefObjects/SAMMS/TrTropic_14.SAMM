@@ -1,0 +1,13 @@
+[MAIN]
+Name=TrTropic_14
+Orientations=X
+
+[#DEFAULT]
+BaseSprite=TrTropic_14
+Images=1
+Frames=1
+Repeating=1
+NextAction=
+
+[$DEFAULT]
+0=0,0,,

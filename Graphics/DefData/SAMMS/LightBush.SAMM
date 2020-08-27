@@ -1,0 +1,15 @@
+[MAIN]
+Name=LightBush
+Orientations=X
+
+
+[#DEFAULT]
+BaseSprite=LightBush
+Images=1
+Frames=1
+Repeating=1
+NextAction=
+
+[$DEFAULT]
+0=0,0,,
+

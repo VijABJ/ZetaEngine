@@ -1,0 +1,13 @@
+[MAIN]
+Name=Lamp_01
+Orientations=X
+
+[#DEFAULT]
+BaseSprite=Lamp_01
+Images=1
+Frames=1
+Repeating=1
+NextAction=
+
+[$DEFAULT]
+0=0,0,,

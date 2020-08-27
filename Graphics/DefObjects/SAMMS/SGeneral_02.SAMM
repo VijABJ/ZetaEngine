@@ -1,0 +1,13 @@
+[MAIN]
+Name=SGeneral_02
+Orientations=X(3:1)
+
+[#DEFAULT]
+BaseSprite=SGeneral_02
+Images=1
+Frames=1
+Repeating=1
+NextAction=
+
+[$DEFAULT]
+0=0,0,,

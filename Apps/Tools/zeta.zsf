@@ -1,0 +1,53 @@
+;---
+; parameters to DirectX engine
+;
+[DIRECTX]
+Resolution=800,600,32
+FullScreen=1
+;Resolution=1024,768,32
+;Resolution=1152,864,32
+
+;---
+; parameters to the isometric engine
+;
+[TILE_ENGINE]
+TileWidth=64
+TileHeight=31
+LevelHeight=120
+
+;---
+; parameters to the engine's display manager
+;
+[DISPLAY_MANAGER]
+ImageFolder=Resources\Images\
+ImageConfig=Config\STDImages.icfg
+SpriteConfig=Config\STDSprites.spcfg
+SpriteList=Config\Sprites.XML
+
+;---
+; parameters for the GUI manager
+;
+[GUI_MANAGER]
+FontConfig=Config\STDFonts.cfg
+ButtonDarkShade=80807F
+ButtonLighShade=DBDBDB
+
+;---
+; location of important files
+;
+[PATHS]
+SoundEffects=Resources\Audio\Sounds\
+Music=Resources\Audio\Music\
+
+[SOUND_EFFECTS]
+;FORMAT:  InGameName=Filename
+GunShot=M16-Fire.wav
+
+[MUSIC]
+;FORMAT:  InGameName=Filename
+TestMusic02=TestMusic01.mid
+TestMusic01=WB.mp3
+;2=TestMusic02,ParokyaNiEdgar-Labsung.mp3
+
+
+

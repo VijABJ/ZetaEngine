@@ -1,0 +1,13 @@
+[MAIN]
+Name=Altar_01
+Orientations=X(4:2)
+
+[#DEFAULT]
+BaseSprite=Altar_01
+Images=1
+Frames=1
+Repeating=1
+NextAction=
+
+[$DEFAULT]
+0=0,0,,

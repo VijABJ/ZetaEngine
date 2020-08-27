@@ -1,0 +1,36 @@
+NOTES on Pseudo-3D Isometric Engine:
+
+* Use dynamic two-dimensional arrays to contain map-tile data.  Maybe a dynamic linked-list of such maps can constitute multiple levels?
+* Make each tile a class that is as self-sufficient as possible and will lend itself well to script manipulation
+* Object placed on tiles should also be class-based.  Maybe one class for moving sprites and another class for the static scene decorations.  Try and anticipate expanding scene decors to be animated.
+* All stuff should have height values to support other levels -- multiple floors on buildings for instance.
+
+
+Sprite Graphics:
+* static images, one facing each direction.  total of 8.
+* idle animation.  4 frames each direction.  32.
+* walking animation, maybe 6 frames.  one set for each direction.  48.
+* running animation. same as walking animation.  48.
+
+Graphics to create:
+* Terrain tiles
+	Grass, Soil, Snow, Moss(decor?), Swamp, Rocks(decor?), 
+	Desert Sand, Beach Sand, Bushes (decor?),
+	Shallow water, Medium water, Deep Water
+* Terrain decors
+	Rocks (3+ types), Bushes (4+ types), Trees (4+ kinds),
+	Scattered leaves, trash, crates, barrels
+
+STRUCTURES:
+Map -> Layers -> Tiles -> Objects
+
+Snow - DONE
+Grass - DONE
+Swamp - DONE
+Soil - DONE
+Sand - DONE
+Water, Shallow - DONE
+Water, Medium - DONE
+Water, Deep - DONE
+BlankTile - DONE
+
