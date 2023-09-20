@@ -1,132 +1,96 @@
-﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-		<PropertyGroup>
-			<ProjectGuid>{D88002E4-3A01-4CA6-AC25-AF1D6D79CAE9}</ProjectGuid>
-		</PropertyGroup>
-		<ItemGroup>
-			<Projects Include="DirectXSubSystem.dproj">
-				<Dependencies/>
-			</Projects>
-			<Projects Include="WindowingSystem.dproj">
-				<Dependencies/>
-			</Projects>
-			<Projects Include="CoreSystem.dproj">
-				<Dependencies/>
-			</Projects>
-			<Projects Include="..\Apps\MapEditor\ZetaMED.dproj">
-				<Dependencies/>
-			</Projects>
-			<Projects Include="..\DLL\ZetaLib.dproj">
-				<Dependencies/>
-			</Projects>
-			<Projects Include="..\Apps\Simple.D6\SimpleD6.dproj">
-				<Dependencies/>
-			</Projects>
-			<Projects Include="..\..\ZbLibrary\LibBuilders\ZbLibBase.dproj">
-				<Dependencies/>
-			</Projects>
-			<Projects Include="..\..\ZbLibrary\LibBuilders\ZbLibScripting.dproj">
-				<Dependencies/>
-			</Projects>
-			<Projects Include="..\..\ZbLibrary\LibBuilders\ZbLibTools.dproj">
-				<Dependencies/>
-			</Projects>
-		</ItemGroup>
-		<ProjectExtensions>
-			<Borland.Personality>Default.Personality.12</Borland.Personality>
-			<Borland.ProjectType/>
-			<BorlandProject>
-				<Default.Personality/>
-			</BorlandProject>
-		</ProjectExtensions>
-		<Target Name="DirectXSubSystem">
-			<MSBuild Projects="DirectXSubSystem.dproj"/>
-		</Target>
-		<Target Name="DirectXSubSystem:Clean">
-			<MSBuild Targets="Clean" Projects="DirectXSubSystem.dproj"/>
-		</Target>
-		<Target Name="DirectXSubSystem:Make">
-			<MSBuild Targets="Make" Projects="DirectXSubSystem.dproj"/>
-		</Target>
-		<Target Name="WindowingSystem">
-			<MSBuild Projects="WindowingSystem.dproj"/>
-		</Target>
-		<Target Name="WindowingSystem:Clean">
-			<MSBuild Targets="Clean" Projects="WindowingSystem.dproj"/>
-		</Target>
-		<Target Name="WindowingSystem:Make">
-			<MSBuild Targets="Make" Projects="WindowingSystem.dproj"/>
-		</Target>
-		<Target Name="CoreSystem">
-			<MSBuild Projects="CoreSystem.dproj"/>
-		</Target>
-		<Target Name="CoreSystem:Clean">
-			<MSBuild Targets="Clean" Projects="CoreSystem.dproj"/>
-		</Target>
-		<Target Name="CoreSystem:Make">
-			<MSBuild Targets="Make" Projects="CoreSystem.dproj"/>
-		</Target>
-		<Target Name="ZetaMED">
-			<MSBuild Projects="..\Apps\MapEditor\ZetaMED.dproj"/>
-		</Target>
-		<Target Name="ZetaMED:Clean">
-			<MSBuild Targets="Clean" Projects="..\Apps\MapEditor\ZetaMED.dproj"/>
-		</Target>
-		<Target Name="ZetaMED:Make">
-			<MSBuild Targets="Make" Projects="..\Apps\MapEditor\ZetaMED.dproj"/>
-		</Target>
-		<Target Name="ZetaLib">
-			<MSBuild Projects="..\DLL\ZetaLib.dproj"/>
-		</Target>
-		<Target Name="ZetaLib:Clean">
-			<MSBuild Targets="Clean" Projects="..\DLL\ZetaLib.dproj"/>
-		</Target>
-		<Target Name="ZetaLib:Make">
-			<MSBuild Targets="Make" Projects="..\DLL\ZetaLib.dproj"/>
-		</Target>
-		<Target Name="SimpleD6">
-			<MSBuild Projects="..\Apps\Simple.D6\SimpleD6.dproj"/>
-		</Target>
-		<Target Name="SimpleD6:Clean">
-			<MSBuild Targets="Clean" Projects="..\Apps\Simple.D6\SimpleD6.dproj"/>
-		</Target>
-		<Target Name="SimpleD6:Make">
-			<MSBuild Targets="Make" Projects="..\Apps\Simple.D6\SimpleD6.dproj"/>
-		</Target>
-		<Target Name="ZbLibBase">
-			<MSBuild Projects="..\..\ZbLibrary\LibBuilders\ZbLibBase.dproj"/>
-		</Target>
-		<Target Name="ZbLibBase:Clean">
-			<MSBuild Targets="Clean" Projects="..\..\ZbLibrary\LibBuilders\ZbLibBase.dproj"/>
-		</Target>
-		<Target Name="ZbLibBase:Make">
-			<MSBuild Targets="Make" Projects="..\..\ZbLibrary\LibBuilders\ZbLibBase.dproj"/>
-		</Target>
-		<Target Name="ZbLibScripting">
-			<MSBuild Projects="..\..\ZbLibrary\LibBuilders\ZbLibScripting.dproj"/>
-		</Target>
-		<Target Name="ZbLibScripting:Clean">
-			<MSBuild Targets="Clean" Projects="..\..\ZbLibrary\LibBuilders\ZbLibScripting.dproj"/>
-		</Target>
-		<Target Name="ZbLibScripting:Make">
-			<MSBuild Targets="Make" Projects="..\..\ZbLibrary\LibBuilders\ZbLibScripting.dproj"/>
-		</Target>
-		<Target Name="ZbLibTools">
-			<MSBuild Projects="..\..\ZbLibrary\LibBuilders\ZbLibTools.dproj"/>
-		</Target>
-		<Target Name="ZbLibTools:Clean">
-			<MSBuild Targets="Clean" Projects="..\..\ZbLibrary\LibBuilders\ZbLibTools.dproj"/>
-		</Target>
-		<Target Name="ZbLibTools:Make">
-			<MSBuild Targets="Make" Projects="..\..\ZbLibrary\LibBuilders\ZbLibTools.dproj"/>
-		</Target>
-		<Target Name="Build">
-			<CallTarget Targets="DirectXSubSystem;WindowingSystem;CoreSystem;ZetaMED;ZetaLib;SimpleD6;ZbLibBase;ZbLibScripting;ZbLibTools"/>
-		</Target>
-		<Target Name="Clean">
-			<CallTarget Targets="DirectXSubSystem:Clean;WindowingSystem:Clean;CoreSystem:Clean;ZetaMED:Clean;ZetaLib:Clean;SimpleD6:Clean;ZbLibBase:Clean;ZbLibScripting:Clean;ZbLibTools:Clean"/>
-		</Target>
-		<Target Name="Make">
-			<CallTarget Targets="DirectXSubSystem:Make;WindowingSystem:Make;CoreSystem:Make;ZetaMED:Make;ZetaLib:Make;SimpleD6:Make;ZbLibBase:Make;ZbLibScripting:Make;ZbLibTools:Make"/>
-		</Target>
-		<Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
-	</Project>
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{8644545F-C286-40B8-B8F0-A0E63D7AA2A1}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="DirectXSubSystem.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="WindowingSystem.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CoreSystem.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Apps\MapEditor\ZetaMED.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\DLL\ZetaLib.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Apps\Simple.D6\SimpleD6.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="DirectXSubSystem">
+        <MSBuild Projects="DirectXSubSystem.dproj"/>
+    </Target>
+    <Target Name="DirectXSubSystem:Clean">
+        <MSBuild Projects="DirectXSubSystem.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DirectXSubSystem:Make">
+        <MSBuild Projects="DirectXSubSystem.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="WindowingSystem">
+        <MSBuild Projects="WindowingSystem.dproj"/>
+    </Target>
+    <Target Name="WindowingSystem:Clean">
+        <MSBuild Projects="WindowingSystem.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="WindowingSystem:Make">
+        <MSBuild Projects="WindowingSystem.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CoreSystem">
+        <MSBuild Projects="CoreSystem.dproj"/>
+    </Target>
+    <Target Name="CoreSystem:Clean">
+        <MSBuild Projects="CoreSystem.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CoreSystem:Make">
+        <MSBuild Projects="CoreSystem.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ZetaMED">
+        <MSBuild Projects="..\Apps\MapEditor\ZetaMED.dproj"/>
+    </Target>
+    <Target Name="ZetaMED:Clean">
+        <MSBuild Projects="..\Apps\MapEditor\ZetaMED.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ZetaMED:Make">
+        <MSBuild Projects="..\Apps\MapEditor\ZetaMED.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ZetaLib">
+        <MSBuild Projects="..\DLL\ZetaLib.dproj"/>
+    </Target>
+    <Target Name="ZetaLib:Clean">
+        <MSBuild Projects="..\DLL\ZetaLib.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ZetaLib:Make">
+        <MSBuild Projects="..\DLL\ZetaLib.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SimpleD6">
+        <MSBuild Projects="..\Apps\Simple.D6\SimpleD6.dproj"/>
+    </Target>
+    <Target Name="SimpleD6:Clean">
+        <MSBuild Projects="..\Apps\Simple.D6\SimpleD6.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SimpleD6:Make">
+        <MSBuild Projects="..\Apps\Simple.D6\SimpleD6.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="DirectXSubSystem;WindowingSystem;CoreSystem;ZetaMED;ZetaLib;SimpleD6"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="DirectXSubSystem:Clean;WindowingSystem:Clean;CoreSystem:Clean;ZetaMED:Clean;ZetaLib:Clean;SimpleD6:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="DirectXSubSystem:Make;WindowingSystem:Make;CoreSystem:Make;ZetaMED:Make;ZetaLib:Make;SimpleD6:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
